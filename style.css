@@ -226,6 +226,11 @@ button {
     height: auto;
 }
 
+.map-img {
+    width: 20%;
+    height: auto;
+}
+
 /* Карта */
 #yandex-map {
     display: flex;
