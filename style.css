@@ -227,7 +227,7 @@ p {
 
     .wedding-invitation {
         box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
+        /*border-radius: 12px;*/
         overflow: hidden; /* важно: чтобы фон секций не вылезал */
     }
 }
