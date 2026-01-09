@@ -135,8 +135,19 @@ button {
 }
 
 #timer {
-    font-size: 22px;
-    margin-top: 10px;
+  margin-top: 10px;
+
+  /* 1) Не переносим таймер на новую строку */
+  white-space: nowrap;
+
+  /* 2) Уменьшаем шрифт на маленьких экранах, но не больше 22px */
+  font-size: clamp(14px, 4.5vw, 22px);
+
+  /* приятнее выглядит при уменьшении */
+  line-height: 1.2;
+
+  /* чтобы цифры не “прыгали” по ширине (опционально, но полезно) */
+  font-variant-numeric: tabular-nums;
 }
 
 /* ============================================
@@ -261,3 +272,8 @@ button {
 .c13 { background: #4d0a18; }
 .c14 { background: #341515; }
 .c15 { background: #aca494; }
+
+
+@media (max-width: 360px) {
+  #timer { font-size: 13px; }
+}
