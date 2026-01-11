@@ -233,76 +233,12 @@
             Мы будем очень рады видеть вас на нашем торжестве! <br>
             Пожалуйста, подтвердите свое присутствие, заполнив форму ниже 
         </p>
-        
-        <!-- Форма опроса -->
-        <form id="guest-form" class="survey-form">
-            <div class="form-group">
-                <label>1. Вы придете? <span class="required">*</span></label>
-                <div class="radio-group">
-                    <label><input type="radio" name="attendance" value="Да" required> Да</label><br>
-                    <label><input type="radio" name="attendance" value="Нет" required> Нет</label><br>
-                    <label><input type="radio" name="attendance" value="Не уверен" required> Не уверен, сообщу позже</label>
-                </div>
-            </div>
 
-            <div class="form-group">
-                <label>2. Потребуется ли трансфер до площадки? <span class="required">*</span></label>
-                <div class="radio-group">
-                    <label><input type="radio" name="transfer" value="Да" required> Да</label><br>
-                    <label><input type="radio" name="transfer" value="Нет" required> Нет</label>
-                </div>
-            </div>
+        <!-- Встраивание Яндекс Формы (контейнер, сам iframe добавит script3.js) -->
+        <div class="yandex-form-embed" id="ya-form-container"></div>
 
-            <div class="form-group">
-                <label>3. От какой станции метро будет удобно организовать трансфер?</label>
-                <select name="metro_station" class="form-select">
-                    <option value="Не нужен трансфер">Не нужен трансфер</option>
-                    <option value="Красный проспект/Сибирская">Красный проспект/Сибирская</option>
-                    <option value="Заельцовская">Заельцовская</option>
-                    <option value="Гагаринская">Гагаринская</option>
-                    <option value="Маршала Покрышкина">Маршала Покрышкина</option>
-                    <option value="Березовая роща">Березовая роща</option>
-                    <option value="Золотая нива">Золотая нива</option>
-                    <option value="Октябрьская">Октябрьская</option>
-                    <option value="Речной вокзал">Речной вокзал</option>
-                    <option value="Студенческая">Студенческая</option>
-                    <option value="Площадь Маркса">Площадь Маркса</option>
-                </select>
-            </div>
 
-            <div class="form-group">
-                <label>4. Пожелания по алкоголю <span class="required">*</span></label>
-                <div class="checkbox-group">
-                    <label><input type="checkbox" name="alcohol" value="Не буду пить"> Не буду пить</label><br>
-                    <label><input type="checkbox" name="alcohol" value="Вино красное"> Вино красное</label><br>
-                    <label><input type="checkbox" name="alcohol" value="Вино белое"> Вино белое</label><br>
-                    <label><input type="checkbox" name="alcohol" value="Шампанское"> Шампанское</label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>5. Комментарии или дополнительные пожелания</label>
-                <textarea name="comments" class="form-textarea" rows="3" placeholder="Ваши пожелания..."></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>6. Имя <span class="required">*</span></label>
-                <input type="text" name="name" class="form-input" required placeholder="Ваше имя">
-            </div>
-
-            <button type="submit" class="submit-button">Отправить ответ</button>
-        </form>
-    </div>
-
-    <div id="thank-you-block" class="info-block" style="display: none;">
-        <h2 class="section-title">Спасибо за ответы!</h2>
-        <p>
-            Ваши ответы успешно отправлены.<br>
-            Будем ждать вас на нашем торжестве!
-        </p>
-    </div>
-
-    <div class="heart-img">
+        <div class="heart-img">
         <img src="resources/heart.svg">
     </div>
 </section>

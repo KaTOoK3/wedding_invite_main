@@ -340,3 +340,20 @@ p {
     color: #ffffff;   /* это и будет цвет stroke */
     display: block;
 }
+
+
+/* ============================================
+   ЯНДЕКС ФОРМА (встраивание)
+============================================ */
+.yandex-form-embed {
+    width: 100%;
+    max-width: 650px;   /* как у тебя было */
+    margin: 0 auto;
+}
+
+.yandex-form-embed iframe {
+    width: 100%;
+    border: 0;
+    display: block;
+    min-height: 900px;  /* можно увеличить/уменьшить при необходимости */
+}
