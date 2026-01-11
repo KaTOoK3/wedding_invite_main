@@ -327,8 +327,16 @@ p {
     opacity: 0.95;
 }
 
+.contact-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
 .contact-icon {
-    width: 40px;
-    height: 40px;
-    fill: #ffffff;
+    width: 44px;
+    height: 44px;
+    color: #ffffff;   /* это и будет цвет stroke */
+    display: block;
 }
