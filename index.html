@@ -11,242 +11,270 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
-    <div class="wedding-invitation">
-        <!-- Заглавная секция -->
-        <section class="header-section">
-            <h1 class="couple-names">ИГОРЬ И ЕКАТЕРИНА</h1>
-            <div class="heart-img">
-                <img src="resources/heart.svg">
+<div class="wedding-invitation">
+
+    <!-- Заглавная секция -->
+    <section class="header-section">
+        <h1 class="couple-names">ИГОРЬ И ЕКАТЕРИНА</h1>
+
+        <div class="heart-img" aria-hidden="true">
+            <svg class="heart-icon" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" role="img">
+                <path fill="currentColor" stroke-width="0.2" stroke-linejoin="round"
+                      d="M 52.2716,27.8072C 48.9356,24.164 42.0671,25.7204 38.0992,31.3618C 33.0737,25.3024 27.0713,24.164 23.7257,27.8072C 14.4142,37.9485 34.3451,52.5246 37.9599,54.1634L 38.0438,54.2109L 38.0438,54.1634C 41.6554,52.5246 61.5832,37.9485 52.2716,27.8072 Z "/>
+            </svg>
+        </div>
+
+
+        <div class="wedding-title">Мы женимся!</div>
+        <div class="wedding-date">26 | 06 | 26</div>
+
+        <div class="photos-bg">
+            <div class="photos">
+                <img src="resources/us1.jpg" alt="">
+                <img src="resources/us2.jpg" alt="">
+                <img src="resources/us4.jpg" alt="">
+                <img src="resources/us3.jpg" alt="">
             </div>
-            <div class="wedding-title">Мы женимся!</div>
-            <div class="wedding-date">26 | 06 | 26</div>
+        </div>
 
-            <div class="photos-bg">
-                <div class="photos">
-                    <img src="resources/us1.jpg">
-                    <img src="resources/us2.jpg">
-                    <img src="resources/us4.jpg">
-                    <img src="resources/us3.jpg">
-                </div>
-            </div>
-            
-            <p class="invitation-text">
-                Если Вы получили эту ссылочку от одного из нас, значит мы будем невероятно счастливы разделить этот день
-                в Вашей компании.
-            </p>
-            
-            <div class="heart-img">
-                <img src="resources/heart.svg">
-            </div>
-        </section>
-
-        <!-- Секция обратного отсчета -->
-        <section class="countdown">
-            <h2>До свадьбы осталось</h2>
-            <div id="timer"></div>
-        </section>
-
-        <!-- Секция календаря -->
-        <section class="calendar-section">
-            <h2 class="section-title">Дата бракосочетания</h2>
-            <div class="month-year">июнь | 2026</div>
-            
-            <table class="calendar">
-                <tr>
-                    <th>Пн</th>
-                    <th>Вт</th>
-                    <th>Ср</th>
-                    <th>Чт</th>
-                    <th>Пт</th>
-                    <th>Сб</th>
-                    <th>Вс</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>9</td>
-                    <td>10</td>
-                    <td>11</td>
-                    <td>12</td>
-                    <td>13</td>
-                    <td>14</td>
-                </tr>
-                <tr>
-                    <td>15</td>
-                    <td>16</td>
-                    <td>17</td>
-                    <td>18</td>
-                    <td>19</td>
-                    <td>20</td>
-                    <td>21</td>
-                </tr>
-                <tr>
-                    <td>22</td>
-                    <td>23</td>
-                    <td>24</td>
-                    <td>25</td>
-                    <td class="wedding-day">26</td>
-                    <td>27</td>
-                    <td>28</td>
-                </tr>
-                <tr>
-                    <td>29</td>
-                    <td>30</td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
-            </table>
-        </section>
-
-        <!-- Секция места проведения -->
-        <section class="location">
-            <div class="info-block">
-                <h2 class="section-timing">Место проведения</h2>
-                <p class="place">
-                    Санаторий PARUS medical resort & SPA <br>
-                    Банкетный зал "White hall"
-                </p>
-                <img class="place-img" src="resources/wh-1.jpg">
-                <p class="address">
-                    Новосибирская область,<br>
-                    д.п. Кудряшовский, ул. Береговая, 56
-                </p>
-                <div id="yandex-map"></div>
-                <a href="https://yandex.ru/maps/-/CLTdJDzB" target="_blank">
-                    <img class="map-img" src="resources/yandex-maps-logo.svg" alt="Яндекс.Карты">
-                </a>
-                <a href="https://go.2gis.com/VYpXh" target="_blank">
-                    <img class="map-img" src="resources/2gis-logo.svg" alt="2ГИС">
-                </a>
-            </div>
-        </section>
-
-        <!-- Секция тайминга -->
-        <section class="timing">
-            <div class="info-block">
-                <h2 class="section-title">Тайминг</h2>
-                
-                <p class="timing-item">
-                    <span class="time">14:00</span>
-                    <span class="time-title">Сбор гостей, фуршет</span>
-                </p>
-                <p>
-                    <span class="time">16:00</span>
-                    <span class="time-title">Церемония</span>
-                </p>
-                <p>
-                    <span class="time">18:00</span>
-                    <span class="time-title">Банкет</span>
-                </p>
-            </div>
-            <div class="heart-img">
-                <img src="resources/heart.svg">
-            </div>
-        </section>
-
-        <section class="requests">
-            <div class="info-block">
-                <h2 class="section-title">Пожелания</h2>
-
-                <div class="requests-grid">
-                    <!-- Карточка 1 -->
-                    <article class="request-card">
-                        <h3 class="request-title">Подарки</h3>
-                        <p class="request-text">
-                            Чтобы наши руки были свободны для объятий,
-                            вместо букетов, пакетов и коробок,
-                            будем рады легкиим подаркам в конвертах
-                        </p>
-                        <span class="request-flower" aria-hidden="true"></span>
-                    </article>
-
-                    <!-- Карточка 2 -->
-                    <article class="request-card">
-                        <h3 class="request-title">Поздравления</h3>
-                        <p class="request-text">
-                            Если ваши поздравления не ограничатся теплыми словами -
-                            просим заблаговременно предупредить об этом нашего ведущего Сергея
-                            (он точно поможет в организации, с ним все получится сделать как
-                            нельзя лучше)
-                        </p>
-                        <a href="https://t.me/sergeyusolcev" target="_blank" class="contact-link">
-                            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill="none"
-                                      fill-rule="evenodd" clip-rule="evenodd"
-                                      d="M21.997 12C21.997 17.5228 17.5198 22 11.997 22C6.47415 22 1.99699 17.5228 1.99699 12C1.99699 6.47715 6.47415 2 11.997 2C17.5198 2 21.997 6.47715 21.997 12ZM12.3553 9.38244C11.3827 9.787 9.43876 10.6243 6.52356 11.8944C6.05018 12.0827 5.8022 12.2669 5.77962 12.4469C5.74147 12.7513 6.12258 12.8711 6.64155 13.0343C6.71214 13.0565 6.78528 13.0795 6.86026 13.1038C7.37085 13.2698 8.05767 13.464 8.41472 13.4717C8.7386 13.4787 9.10009 13.3452 9.49918 13.0711C12.2229 11.2325 13.629 10.3032 13.7172 10.2831C13.7795 10.269 13.8658 10.2512 13.9243 10.3032C13.9828 10.3552 13.977 10.4536 13.9708 10.48C13.9331 10.641 12.4371 12.0318 11.6629 12.7515C11.4216 12.9759 11.2504 13.135 11.2154 13.1714C11.137 13.2528 11.0571 13.3298 10.9803 13.4038C10.506 13.8611 10.1502 14.204 11 14.764C11.4083 15.0331 11.7351 15.2556 12.0611 15.4776C12.4171 15.7201 12.7722 15.9619 13.2317 16.2631C13.3487 16.3398 13.4605 16.4195 13.5694 16.4971C13.9837 16.7925 14.3559 17.0579 14.8158 17.0155C15.083 16.991 15.359 16.7397 15.4992 15.9903C15.8305 14.2193 16.4817 10.382 16.6322 8.80081C16.6454 8.66228 16.6288 8.48498 16.6154 8.40715C16.6021 8.32932 16.5743 8.21842 16.4731 8.13633C16.3533 8.03911 16.1683 8.01861 16.0856 8.02C15.7095 8.0267 15.1324 8.22735 12.3553 9.38244Z"
-                                      stroke="currentColor"
-                                      stroke-width="1.6"
-                                      stroke-linejoin="round"/>
-                            </svg>
-
-                        </a>
-                        <span class="request-flower" aria-hidden="true"></span>
-                    </article>
-
-                    <!-- Карточка 3 (пример с палитрой) -->
-                    <article class="request-card">
-                        <h3 class="request-title">Дресс-код</h3>
-                        <p class="request-text">
-                            Будет здорово, если вы поддержите палитру нашей свадьбы.
-                        </p>
-
-                        <div class="colors">
-                            <span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span><span class="c5"></span>
-                            <span class="c6"></span><span class="c7"></span><span class="c8"></span><span class="c9"></span><span class="c10"></span>
-                            <span class="c11"></span><span class="c12"></span><span class="c13"></span><span class="c14"></span><span class="c15"></span>
-                        </div>
-
-                        <p class="request-note">
-                            Просим воздержаться от белого, холодных оттенков и слишком ярких цветов.
-                        </p>
-
-                        <span class="request-flower" aria-hidden="true"></span>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-
-
-        <!-- Секция подтверждения -->
-<section class="Questions">
-    <div id="question-block" class="info-block">
-        <h2 class="section-title">Вы придете?</h2>
-        <p>
-            Мы будем очень рады видеть вас на нашем торжестве! <br>
-            Пожалуйста, подтвердите свое присутствие, заполнив форму ниже 
+        <p class="invitation-text">
+            Если Вы получили эту ссылочку от одного из нас, значит мы будем невероятно счастливы разделить этот день
+            в Вашей компании.
         </p>
 
-        <!-- Встраивание Яндекс Формы (контейнер, сам iframe добавит script3.js) -->
-        <div class="yandex-form-embed" id="ya-form-container"></div>
+        <div class="heart-img" aria-hidden="true">
+            <svg class="heart-icon" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" role="img">
+                <path fill="currentColor" stroke-width="0.2" stroke-linejoin="round"
+                      d="M 52.2716,27.8072C 48.9356,24.164 42.0671,25.7204 38.0992,31.3618C 33.0737,25.3024 27.0713,24.164 23.7257,27.8072C 14.4142,37.9485 34.3451,52.5246 37.9599,54.1634L 38.0438,54.2109L 38.0438,54.1634C 41.6554,52.5246 61.5832,37.9485 52.2716,27.8072 Z "/>
+            </svg>
+        </div>
 
+    </section>
 
-        <div class="heart-img">
-        <img src="resources/heart.svg">
-    </div>
-</section>
-    </div>
+    <!-- Секция обратного отсчета -->
+    <section class="countdown">
+        <h2>До свадьбы осталось</h2>
+        <div id="timer"></div>
+    </section>
 
-    <script src="script.js"></script>
-    <script src="script2.js"></script>
-    <script src="script3.js"></script>
+    <!-- Секция календаря -->
+    <section class="calendar-section">
+        <h2 class="section-title">Дата бракосочетания</h2>
+        <div class="month-year">июнь | 2026</div>
+
+        <table class="calendar">
+            <tr>
+                <th>Пн</th>
+                <th>Вт</th>
+                <th>Ср</th>
+                <th>Чт</th>
+                <th>Пт</th>
+                <th>Сб</th>
+                <th>Вс</th>
+            </tr>
+            <tr>
+                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+            </tr>
+            <tr>
+                <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+            </tr>
+            <tr>
+                <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+            </tr>
+            <tr>
+                <td>22</td><td>23</td><td>24</td><td>25</td><td class="wedding-day">26</td><td>27</td><td>28</td>
+            </tr>
+            <tr>
+                <td>29</td><td>30</td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Секция места проведения -->
+    <section class="location">
+        <div class="info-block">
+            <h2 class="section-timing">Место проведения</h2>
+
+            <p class="place">
+                Санаторий PARUS medical resort & SPA <br>
+                Банкетный зал "White hall"
+            </p>
+
+            <img class="place-img" src="resources/wh-1.jpg" alt="">
+
+            <p class="address">
+                Новосибирская область,<br>
+                д.п. Кудряшовский, ул. Береговая, 56
+            </p>
+
+            <div id="yandex-map"></div>
+
+            <!-- ИКОНКИ КАРТ: inline SVG вместо img -->
+            <div class="map-links">
+                <a class="map-link" href="https://yandex.ru/maps/-/CLTdJDzB" target="_blank" aria-label="Открыть в Яндекс Картах">
+                    <!-- YANDEX SVG (white via currentColor) -->
+                    <svg class="map-icon map-icon--yandex" viewBox="-6 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                        <path fill="currentColor"
+                              d="m7.083 14.8-4.098 9.2h-2.986l4.5-9.834c-2.114-1.074-3.525-3.018-3.525-6.614-.005-5.034 3.185-7.551 6.979-7.551h3.858v24h-2.582v-9.2h-2.146zm2.147-12.62h-1.378c-2.08 0-4.097 1.378-4.097 5.372 0 3.858 1.847 5.1 4.097 5.1h1.378z"/>
+                    </svg>
+                </a>
+
+                <a class="map-link" href="https://go.2gis.com/VYpXh" target="_blank" aria-label="Открыть в 2ГИС">
+                    <!-- 2GIS SVG (white via currentColor) -->
+                    <svg class="map-icon map-icon--2gis" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+                        <path d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"
+                              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M25.5785,36.1424c-.041-4.7889,1.0624-8.7464,7.0814-8.4979C41.246,5.7628,6.2359,6.5969,15.5681,27.5138c2.83-.1756,7.5212,1.5092,6.72,9.1465"
+                              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M42.5,33.479l-37,5.8236"
+                              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M5.5,11.04l12.3448,2.29"
+                              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M32.3554,15.53,42.5,17.0114"
+                              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция тайминга -->
+    <section class="timing">
+        <div class="info-block">
+            <h2 class="section-title">Тайминг</h2>
+
+            <p class="timing-item">
+                <span class="time">14:00</span>
+                <span class="time-title">Сбор гостей, фуршет</span>
+            </p>
+            <p>
+                <span class="time">16:00</span>
+                <span class="time-title">Церемония</span>
+            </p>
+            <p>
+                <span class="time">18:00</span>
+                <span class="time-title">Банкет</span>
+            </p>
+        </div>
+
+        <div class="heart-img" aria-hidden="true">
+            <svg class="heart-icon" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" role="img">
+                <path fill="currentColor" stroke-width="0.2" stroke-linejoin="round"
+                      d="M 52.2716,27.8072C 48.9356,24.164 42.0671,25.7204 38.0992,31.3618C 33.0737,25.3024 27.0713,24.164 23.7257,27.8072C 14.4142,37.9485 34.3451,52.5246 37.9599,54.1634L 38.0438,54.2109L 38.0438,54.1634C 41.6554,52.5246 61.5832,37.9485 52.2716,27.8072 Z "/>
+            </svg>
+        </div>
+
+    </section>
+
+    <!-- Пожелания -->
+    <section class="requests">
+        <div class="info-block">
+            <h2 class="section-title">Пожелания</h2>
+
+            <div class="requests-grid">
+                <article class="request-card">
+                    <h3 class="request-title">Подарки</h3>
+                    <p class="request-text">
+                        Чтобы наши руки были свободны для объятий,
+                        вместо букетов, пакетов и коробок,
+                        будем рады легким подаркам в конвертах
+                    </p>
+                    <span class="request-flower" aria-hidden="true"></span>
+                </article>
+
+                <article class="request-card">
+                    <h3 class="request-title">Поздравления</h3>
+                    <p class="request-text">
+                        Если ваши поздравления не ограничатся теплыми словами -
+                        просим заблаговременно предупредить об этом нашего ведущего Сергея
+                        (он точно поможет в организации, с ним все получится сделать как
+                        нельзя лучше)
+                    </p>
+
+                    <a href="https://t.me/sergeyusolcev" target="_blank" class="contact-link" aria-label="Написать в Telegram">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="none" fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M21.997 12C21.997 17.5228 17.5198 22 11.997 22C6.47415 22 1.99699 17.5228 1.99699 12C1.99699 6.47715 6.47415 2 11.997 2C17.5198 2 21.997 6.47715 21.997 12ZM12.3553 9.38244C11.3827 9.787 9.43876 10.6243 6.52356 11.8944C6.05018 12.0827 5.8022 12.2669 5.77962 12.4469C5.74147 12.7513 6.12258 12.8711 6.64155 13.0343C6.71214 13.0565 6.78528 13.0795 6.86026 13.1038C7.37085 13.2698 8.05767 13.464 8.41472 13.4717C8.7386 13.4787 9.10009 13.3452 9.49918 13.0711C12.2229 11.2325 13.629 10.3032 13.7172 10.2831C13.7795 10.269 13.8658 10.2512 13.9243 10.3032C13.9828 10.3552 13.977 10.4536 13.9708 10.48C13.9331 10.641 12.4371 12.0318 11.6629 12.7515C11.4216 12.9759 11.2504 13.135 11.2154 13.1714C11.137 13.2528 11.0571 13.3298 10.9803 13.4038C10.506 13.8611 10.1502 14.204 11 14.764C11.4083 15.0331 11.7351 15.2556 12.0611 15.4776C12.4171 15.7201 12.7722 15.9619 13.2317 16.2631C13.3487 16.3398 13.4605 16.4195 13.5694 16.4971C13.9837 16.7925 14.3559 17.0579 14.8158 17.0155C15.083 16.991 15.359 16.7397 15.4992 15.9903C15.8305 14.2193 16.4817 10.382 16.6322 8.80081C16.6454 8.66228 16.6288 8.48498 16.6154 8.40715C16.6021 8.32932 16.5743 8.21842 16.4731 8.13633C16.3533 8.03911 16.1683 8.01861 16.0856 8.02C15.7095 8.0267 15.1324 8.22735 12.3553 9.38244Z"
+                                  stroke="currentColor"
+                                  stroke-width="1.6"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+
+                    <span class="request-flower" aria-hidden="true"></span>
+                </article>
+
+                <article class="request-card">
+                    <h3 class="request-title">Дресс-код</h3>
+                    <p class="request-text">
+                        Будет здорово, если вы поддержите палитру нашей свадьбы.
+                    </p>
+
+                    <div class="colors">
+                        <span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span><span class="c5"></span>
+                        <span class="c6"></span><span class="c7"></span><span class="c8"></span><span class="c9"></span><span class="c10"></span>
+                        <span class="c11"></span><span class="c12"></span><span class="c13"></span><span class="c14"></span><span class="c15"></span>
+                    </div>
+
+                    <p class="request-note">
+                        Просим воздержаться от белого, холодных оттенков и слишком ярких цветов.
+                    </p>
+
+                    <span class="request-flower" aria-hidden="true"></span>
+                </article>
+
+                <article class="request-card">
+                    <h3 class="request-title">Организационные вопросы</h3>
+                    <p class="request-text">
+                        По всем организационным вопросам обращайтесь к нам или нашему организатору Александре
+                    </p>
+
+                    <a href="https://t.me/sergeyusolcev" target="_blank" class="contact-link" aria-label="Написать в Telegram">
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="none" fill-rule="evenodd" clip-rule="evenodd"
+                                  d="M21.997 12C21.997 17.5228 17.5198 22 11.997 22C6.47415 22 1.99699 17.5228 1.99699 12C1.99699 6.47715 6.47415 2 11.997 2C17.5198 2 21.997 6.47715 21.997 12ZM12.3553 9.38244C11.3827 9.787 9.43876 10.6243 6.52356 11.8944C6.05018 12.0827 5.8022 12.2669 5.77962 12.4469C5.74147 12.7513 6.12258 12.8711 6.64155 13.0343C6.71214 13.0565 6.78528 13.0795 6.86026 13.1038C7.37085 13.2698 8.05767 13.464 8.41472 13.4717C8.7386 13.4787 9.10009 13.3452 9.49918 13.0711C12.2229 11.2325 13.629 10.3032 13.7172 10.2831C13.7795 10.269 13.8658 10.2512 13.9243 10.3032C13.9828 10.3552 13.977 10.4536 13.9708 10.48C13.9331 10.641 12.4371 12.0318 11.6629 12.7515C11.4216 12.9759 11.2504 13.135 11.2154 13.1714C11.137 13.2528 11.0571 13.3298 10.9803 13.4038C10.506 13.8611 10.1502 14.204 11 14.764C11.4083 15.0331 11.7351 15.2556 12.0611 15.4776C12.4171 15.7201 12.7722 15.9619 13.2317 16.2631C13.3487 16.3398 13.4605 16.4195 13.5694 16.4971C13.9837 16.7925 14.3559 17.0579 14.8158 17.0155C15.083 16.991 15.359 16.7397 15.4992 15.9903C15.8305 14.2193 16.4817 10.382 16.6322 8.80081C16.6454 8.66228 16.6288 8.48498 16.6154 8.40715C16.6021 8.32932 16.5743 8.21842 16.4731 8.13633C16.3533 8.03911 16.1683 8.01861 16.0856 8.02C15.7095 8.0267 15.1324 8.22735 12.3553 9.38244Z"
+                                  stroke="currentColor"
+                                  stroke-width="1.6"
+                                  stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+
+                    <span class="request-flower" aria-hidden="true"></span>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Опрос -->
+    <section class="Questions">
+        <div id="question-block" class="info-block">
+            <h2 class="section-title">Вы придете?</h2>
+            <p>
+                Мы будем очень рады видеть вас на нашем торжестве! <br>
+                Пожалуйста, подтвердите свое присутствие, заполнив форму ниже
+            </p>
+
+            <!-- Яндекс Форма (iframe добавит script3.js) -->
+            <div class="yandex-form-embed" id="ya-form-container"></div>
+        </div>
+
+        <div class="heart-img" aria-hidden="true">
+            <svg class="heart-icon" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" role="img">
+                <path fill="currentColor" stroke-width="0.2" stroke-linejoin="round"
+                      d="M 52.2716,27.8072C 48.9356,24.164 42.0671,25.7204 38.0992,31.3618C 33.0737,25.3024 27.0713,24.164 23.7257,27.8072C 14.4142,37.9485 34.3451,52.5246 37.9599,54.1634L 38.0438,54.2109L 38.0438,54.1634C 41.6554,52.5246 61.5832,37.9485 52.2716,27.8072 Z "/>
+            </svg>
+        </div>
+
+    </section>
+
+</div>
+
+<script src="script.js"></script>
+<script src="script2.js"></script>
+<script src="script3.js"></script>
 </body>
-
 </html>
