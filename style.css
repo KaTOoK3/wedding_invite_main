@@ -2,11 +2,11 @@
    ПЕРЕМЕННЫЕ
 ============================================ */
 :root {
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Great Vibes', cursive;
     --font-body: 'Montserrat', sans-serif;
 
-    --bg-burgundy: #6b1f2b;
-    --bg-beige: #f3efe9;
+    --bg-burgundy: #4E170B;
+    --bg-beige: #FFFBFA;
 }
 
 /* ============================================
@@ -46,7 +46,8 @@ section {
 ============================================ */
 h1, h2, h3 {
     font-family: var(--font-heading);
-    font-weight: 600;
+    font-size: 48px;
+    font-weight: 100;
     letter-spacing: 0.5px;
     margin: 0 0 16px;
 }
@@ -57,11 +58,36 @@ p {
 }
 
 /* ============================================
-   HEADER / ВЕРХ САЙТА
+   БЕЛАЯ КАРТОЧКА (универсальная)
 ============================================ */
-.header-section {
+.card--white,
+.location-card--white {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 22px 18px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+    color: #2b2b2b;
+}
+
+/* ============================================
+   HEADER
+============================================ */
+.header-section{
+    padding: 0;
+}
+
+/* Бежевый верх */
+.header-top{
+    background: var(--bg-beige);
+    color: #000000;
+    padding: 40px 20px 18px;
+}
+
+/* Бордовый блок только под фото + текст + второе сердце */
+.header-burgundy{
     background: var(--bg-burgundy);
     color: #ffffff;
+    padding: 18px 20px 28px; /* чуть сверху и чуть снизу оставили */
 }
 
 .couple-names {
@@ -70,27 +96,28 @@ p {
 }
 
 .wedding-title {
+    font-family: "Rampart One", sans-serif;
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 0px;
 }
 
 .wedding-date {
     font-size: 18px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 /* Сердце как inline SVG */
 .heart-img {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    margin: 18px 0;
 }
 
 .heart-icon {
     width: 10%;
     height: auto;
     display: block;
-    color: #ffffff; /* белое сердце, как ты хотел */
+    color: currentColor; /* наследует цвет блока */
 }
 
 /* ============================================
@@ -101,9 +128,10 @@ p {
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     padding: 16px;
-    margin: 32px 0;
+    margin: 18px 0 22px;
     background: #ffffff;
     box-sizing: border-box;
+    border-radius: 16px;
 }
 
 .photos img {
@@ -111,32 +139,38 @@ p {
     height: 100%;
     display: block;
     object-fit: cover;
+    border-radius: 10px;
 }
 
 /* ============================================
-   СЕКЦИЯ ОБРАТНОГО ОТСЧЁТА
+   СЕКЦИИ С БЕЖЕВЫМ ФОНОМ
 ============================================ */
-.countdown {
+.countdown,
+.calendar-section,
+.location,
+.timing,
+.requests,
+.Questions {
     background: var(--bg-beige);
 }
 
+/* ============================================
+   ТАЙМЕР
+============================================ */
 #timer {
     margin-top: 10px;
     white-space: nowrap;
     font-size: clamp(14px, 4.5vw, 22px);
     line-height: 1.2;
     font-variant-numeric: tabular-nums;
+    color: #000;
 }
 
 /* ============================================
    КАЛЕНДАРЬ
 ============================================ */
-.calendar-section {
-    background: var(--bg-beige);
-}
-
 .calendar {
-    margin: 20px auto;
+    margin: 20px auto 0;
     border-collapse: collapse;
 }
 
@@ -154,23 +188,59 @@ p {
 .calendar .wedding-day::before {
     content: '';
     position: absolute;
-    inset: 6px;
+    inset: 8px;
     border: 2px dashed #ff6b6b;
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
 
 /* ============================================
-   МЕСТО ПРОВЕДЕНИЯ
+   ЛОКАЦИЯ — карточки
 ============================================ */
-.location {
-    background: var(--bg-beige);
+.location-cards{
+    display: grid;
+    gap: 16px;
 }
 
-.place-img {
+/* Фото-карточка локации */
+.location-photo-card{
+    background: var(--bg-burgundy);
+    border-radius: 18px;
+    padding: 12px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    overflow: hidden;
+}
+
+.location-photo-card .place-img{
     width: 100%;
     height: auto;
-    margin: 20px 0;
+    display: block;
+    border-radius: 14px;
+    margin: 0;
+    object-fit: cover;
+}
+
+/* Вырез как в пожеланиях — под цвет секции (бежевый) */
+.location-photo-card--with-notch {
+    position: relative;
+}
+
+.location-photo-card--with-notch::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bg-beige);
+    z-index: 2;
+}
+
+/* отступ перед картой */
+.location-card--white{
+    margin-bottom: 24px;
 }
 
 /* --- ИКОНКИ КАРТ (SVG) --- */
@@ -196,46 +266,111 @@ p {
 .map-icon {
     width: 32px;
     height: 32px;
-    color: #ffffff; /* белый как у Telegram */
+    color: #ffffff;
     display: block;
 }
 
 /* ============================================
-   ТАЙМИНГ
+   ТАЙМИНГ (теперь в карточке, текст черный)
 ============================================ */
-.timing {
-    background: var(--bg-burgundy);
-    color: #ffffff;
+.time,
+.time-title{
+    color: #000;
 }
 
 /* ============================================
-   ДРЕСС-КОД
+   Пожелания — карточки теперь белые, текст черный
 ============================================ */
-.dress-code {
-    background: var(--bg-burgundy);
-    color: #ffffff;
+.requests {
+    color: #2b2b2b;
 }
 
-.colors {
+.requests-grid {
     display: grid;
-    grid-template-columns: repeat(5, 24px);
-    grid-template-rows: repeat(3, 24px);
-    gap: 10px;
-    justify-content: center;
-    margin: 20px 0;
+    gap: 16px;
+    margin-top: 18px;
 }
 
-.colors span {
-    width: 24px;
-    height: 24px;
+@media (min-width: 560px) {
+    .requests-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.request-card {
+    position: relative;
+    background: #ffffff;
+    color: #2b2b2b;
+    border-radius: 18px;
+    padding: 22px 18px 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+}
+
+.request-card::before {
+    content: "";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
+    background: var(--bg-beige);
+}
+
+.request-title {
+    margin: 0 0 10px;
+    font-family:  var(--font-body);
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--bg-burgundy);
+}
+
+.request-text,
+.request-note{
+    color: #2b2b2b;
+}
+
+.contact-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+}
+
+/* Иконки Telegram в пожеланиях — черные */
+.contact-icon {
+    width: 44px;
+    height: 44px;
+    color: #000000;
+    display: block;
 }
 
 /* ============================================
-   ОПРОС ГОСТЕЙ
+   Разделитель перед опросом
 ============================================ */
-.Questions {
-    background: var(--bg-beige);
+.section-divider{
+    border: none;
+    height: 0px;
+    background: rgba(0,0,0,0.15);
+    margin: 10px 20px 0;
+}
+
+/* ============================================
+   ЯНДЕКС ФОРМА (встраивание)
+============================================ */
+.yandex-form-embed {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.yandex-form-embed iframe {
+    width: 100%;
+    border: 0;
+    display: block;
+    min-height: 900px;
 }
 
 /* ============================================
@@ -283,89 +418,3 @@ p {
 .c13 { background: #4d0a18; }
 .c14 { background: #341515; }
 .c15 { background: #aca494; }
-
-/* =========================
-   Несколько просьб — карточки (только форма)
-========================= */
-
-.requests {
-    background: var(--bg-beige);
-    color: #2b2b2b;
-}
-
-.requests-grid {
-    display: grid;
-    gap: 16px;
-    margin-top: 18px;
-}
-
-@media (min-width: 560px) {
-    .requests-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-.request-card {
-    position: relative;
-    background: var(--bg-burgundy);
-    color: #fff;
-    border-radius: 18px;
-    padding: 22px 18px 18px;
-    overflow: hidden;
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
-}
-
-.request-card::before {
-    content: "";
-    position: absolute;
-    top: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--bg-beige);
-}
-
-.request-title {
-    margin: 0 0 10px;
-    font-family: var(--font-heading);
-    font-size: 18px;
-}
-
-.request-text {
-    margin: 0;
-    font-size: 14.5px;
-    line-height: 1.45;
-    opacity: 0.95;
-}
-
-.contact-link {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 16px;
-}
-
-.contact-icon {
-    width: 44px;
-    height: 44px;
-    color: #ffffff;
-    display: block;
-}
-
-/* ============================================
-   ЯНДЕКС ФОРМА (встраивание)
-============================================ */
-.yandex-form-embed {
-    width: 100%;
-    max-width: 650px;
-    margin: 0 auto;
-}
-
-.yandex-form-embed iframe {
-    width: 100%;
-    border: 0;
-    display: block;
-    min-height: 900px;
-}

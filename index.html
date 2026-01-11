@@ -12,6 +12,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Onest:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Onest:wght@100..900&family=Rampart+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,132 +21,153 @@
 
     <!-- Заглавная секция -->
     <section class="header-section">
-        <h1 class="couple-names">ИГОРЬ И ЕКАТЕРИНА</h1>
 
-        <div class="heart-img" aria-hidden="true">
-            <svg class="heart-icon" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" role="img">
-                <path fill="currentColor" stroke-width="0.2" stroke-linejoin="round"
-                      d="M 52.2716,27.8072C 48.9356,24.164 42.0671,25.7204 38.0992,31.3618C 33.0737,25.3024 27.0713,24.164 23.7257,27.8072C 14.4142,37.9485 34.3451,52.5246 37.9599,54.1634L 38.0438,54.2109L 38.0438,54.1634C 41.6554,52.5246 61.5832,37.9485 52.2716,27.8072 Z "/>
-            </svg>
+        <!-- БЕЖЕВЫЙ ВЕРХ: имена, "мы женимся", дата -->
+        <div class="header-top">
+            <h1 class="couple-names">Игорь и Екатерина</h1>
+
+            <div class="heart-img" aria-hidden="true">
+                <svg class="heart-icon" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <path fill="currentColor" stroke-width="0.2" stroke-linejoin="round"
+                          d="M 52.2716,27.8072C 48.9356,24.164 42.0671,25.7204 38.0992,31.3618C 33.0737,25.3024 27.0713,24.164 23.7257,27.8072C 14.4142,37.9485 34.3451,52.5246 37.9599,54.1634L 38.0438,54.2109L 38.0438,54.1634C 41.6554,52.5246 61.5832,37.9485 52.2716,27.8072 Z "/>
+                </svg>
+            </div>
+
+            <div class="wedding-title">Мы женимся!</div>
+            <div class="wedding-date">26 | 06 | 26</div>
         </div>
 
+        <!-- БОРДОВЫЙ БЛОК: только фото + текст + второе сердце -->
+        <div class="header-burgundy">
+            <div class="photos-bg">
+                <div class="photos">
+                    <img src="resources/us4.jpg" alt="">
+                    <img src="resources/us2.jpg" alt="">
+                    <img src="resources/us7.jpg" alt="">
+                    <img src="resources/us3.jpg" alt="">
+                </div>
+            </div>
 
-        <div class="wedding-title">Мы женимся!</div>
-        <div class="wedding-date">26 | 06 | 26</div>
+            <p class="invitation-text">
+                Если Вы получили эту ссылочку от одного из нас, значит мы будем невероятно счастливы разделить этот день
+                в Вашей компании.
+            </p>
 
-        <div class="photos-bg">
-            <div class="photos">
-                <img src="resources/us1.jpg" alt="">
-                <img src="resources/us2.jpg" alt="">
-                <img src="resources/us4.jpg" alt="">
-                <img src="resources/us3.jpg" alt="">
+            <div class="heart-img" aria-hidden="true">
+                <svg class="heart-icon" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" role="img">
+                    <path fill="currentColor" stroke-width="0.2" stroke-linejoin="round"
+                          d="M 52.2716,27.8072C 48.9356,24.164 42.0671,25.7204 38.0992,31.3618C 33.0737,25.3024 27.0713,24.164 23.7257,27.8072C 14.4142,37.9485 34.3451,52.5246 37.9599,54.1634L 38.0438,54.2109L 38.0438,54.1634C 41.6554,52.5246 61.5832,37.9485 52.2716,27.8072 Z "/>
+                </svg>
             </div>
         </div>
 
-        <p class="invitation-text">
-            Если Вы получили эту ссылочку от одного из нас, значит мы будем невероятно счастливы разделить этот день
-            в Вашей компании.
-        </p>
-
-        <div class="heart-img" aria-hidden="true">
-            <svg class="heart-icon" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" role="img">
-                <path fill="currentColor" stroke-width="0.2" stroke-linejoin="round"
-                      d="M 52.2716,27.8072C 48.9356,24.164 42.0671,25.7204 38.0992,31.3618C 33.0737,25.3024 27.0713,24.164 23.7257,27.8072C 14.4142,37.9485 34.3451,52.5246 37.9599,54.1634L 38.0438,54.2109L 38.0438,54.1634C 41.6554,52.5246 61.5832,37.9485 52.2716,27.8072 Z "/>
-            </svg>
-        </div>
-
     </section>
 
-    <!-- Секция обратного отсчета -->
+    <!-- Секция обратного отсчета (в белой карточке) -->
     <section class="countdown">
-        <h2>До свадьбы осталось</h2>
-        <div id="timer"></div>
+        <div class="card card--white">
+            <h2>До свадьбы осталось</h2>
+            <div id="timer"></div>
+        </div>
     </section>
 
-    <!-- Секция календаря -->
+    <!-- Секция календаря (в белой карточке) -->
     <section class="calendar-section">
-        <h2 class="section-title">Дата бракосочетания</h2>
-        <div class="month-year">июнь | 2026</div>
+        <div class="card card--white">
+            <h2 class="section-title">Дата бракосочетания</h2>
+            <div class="month-year">июнь | 2026</div>
 
-        <table class="calendar">
-            <tr>
-                <th>Пн</th>
-                <th>Вт</th>
-                <th>Ср</th>
-                <th>Чт</th>
-                <th>Пт</th>
-                <th>Сб</th>
-                <th>Вс</th>
-            </tr>
-            <tr>
-                <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
-            </tr>
-            <tr>
-                <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
-            </tr>
-            <tr>
-                <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
-            </tr>
-            <tr>
-                <td>22</td><td>23</td><td>24</td><td>25</td><td class="wedding-day">26</td><td>27</td><td>28</td>
-            </tr>
-            <tr>
-                <td>29</td><td>30</td><td></td><td></td><td></td><td></td><td></td>
-            </tr>
-        </table>
+            <table class="calendar">
+                <tr>
+                    <th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th>
+                </tr>
+                <tr>
+                    <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td>
+                </tr>
+                <tr>
+                    <td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td>
+                </tr>
+                <tr>
+                    <td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td>
+                </tr>
+                <tr>
+                    <td>22</td><td>23</td><td>24</td><td>25</td><td class="wedding-day">26</td><td>27</td><td>28</td>
+                </tr>
+                <tr>
+                    <td>29</td><td>30</td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+            </table>
+        </div>
     </section>
+
+    <!-- Разделитель перед опросом -->
+    <hr class="section-divider">
 
     <!-- Секция места проведения -->
     <section class="location">
-        <div class="info-block">
-            <h2 class="section-timing">Место проведения</h2>
+        <div class="location-cards">
 
-            <p class="place">
-                Санаторий PARUS medical resort & SPA <br>
-                Банкетный зал "White hall"
-            </p>
-
-            <img class="place-img" src="resources/wh-1.jpg" alt="">
-
-            <p class="address">
-                Новосибирская область,<br>
-                д.п. Кудряшовский, ул. Береговая, 56
-            </p>
-
-            <div id="yandex-map"></div>
-
-            <!-- ИКОНКИ КАРТ: inline SVG вместо img -->
-            <div class="map-links">
-                <a class="map-link" href="https://yandex.ru/maps/-/CLTdJDzB" target="_blank" aria-label="Открыть в Яндекс Картах">
-                    <!-- YANDEX SVG (white via currentColor) -->
-                    <svg class="map-icon map-icon--yandex" viewBox="-6 0 24 24" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                        <path fill="currentColor"
-                              d="m7.083 14.8-4.098 9.2h-2.986l4.5-9.834c-2.114-1.074-3.525-3.018-3.525-6.614-.005-5.034 3.185-7.551 6.979-7.551h3.858v24h-2.582v-9.2h-2.146zm2.147-12.62h-1.378c-2.08 0-4.097 1.378-4.097 5.372 0 3.858 1.847 5.1 4.097 5.1h1.378z"/>
-                    </svg>
-                </a>
-
-                <a class="map-link" href="https://go.2gis.com/VYpXh" target="_blank" aria-label="Открыть в 2ГИС">
-                    <!-- 2GIS SVG (white via currentColor) -->
-                    <svg class="map-icon map-icon--2gis" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
-                        <path d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"
-                              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M25.5785,36.1424c-.041-4.7889,1.0624-8.7464,7.0814-8.4979C41.246,5.7628,6.2359,6.5969,15.5681,27.5138c2.83-.1756,7.5212,1.5092,6.72,9.1465"
-                              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M42.5,33.479l-37,5.8236"
-                              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M5.5,11.04l12.3448,2.29"
-                              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M32.3554,15.53,42.5,17.0114"
-                              fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </a>
+            <div class="location-card">
+                <h2 class="section-timing">Место проведения</h2>
             </div>
+
+            <!-- 1) СНАЧАЛА фото (карточка с вырезом) -->
+            <div class="location-photo-card location-photo-card--with-notch">
+                <img class="place-img" src="resources/wh-1.jpg" alt="White hall">
+            </div>
+
+            <!-- 2) ПОТОМ белая карточка с информацией -->
+            <div class="location-card location-card--white">
+
+
+                <p class="place">
+                    Санаторий PARUS medical resort & SPA <br>
+                    Банкетный зал "White hall"
+                </p>
+
+                <p class="address">
+                    Новосибирская область,<br>
+                    д.п. Кудряшовский, ул. Береговая, 56
+                </p>
+
+                <div class="map-links">
+                    <!-- Яндекс -->
+                    <a class="map-link" href="https://yandex.ru/maps/-/CLTdJDzB" target="_blank" aria-label="Открыть в Яндекс Картах">
+                        <svg class="map-icon" viewBox="-6 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor"
+                                  d="m7.083 14.8-4.098 9.2h-2.986l4.5-9.834c-2.114-1.074-3.525-3.018-3.525-6.614-.005-5.034 3.185-7.551 6.979-7.551h3.858v24h-2.582v-9.2h-2.146zm2.147-12.62h-1.378c-2.08 0-4.097 1.378-4.097 5.372 0 3.858 1.847 5.1 4.097 5.1h1.378z"/>
+                        </svg>
+                    </a>
+
+                    <!-- 2ГИС -->
+                    <a class="map-link" href="https://go.2gis.com/VYpXh" target="_blank" aria-label="Открыть в 2ГИС">
+                        <svg class="map-icon" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M40.5,5.5H7.5a2,2,0,0,0-2,2v33a2,2,0,0,0,2,2h33a2,2,0,0,0,2-2V7.5A2,2,0,0,0,40.5,5.5Z"
+                                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M25.5785,36.1424c-.041-4.7889,1.0624-8.7464,7.0814-8.4979C41.246,5.7628,6.2359,6.5969,15.5681,27.5138c2.83-.1756,7.5212,1.5092,6.72,9.1465"
+                                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M42.5,33.479l-37,5.8236"
+                                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5.5,11.04l12.3448,2.29"
+                                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M32.3554,15.53,42.5,17.0114"
+                                  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
         </div>
+
+        <div id="yandex-map"></div>
     </section>
 
-    <!-- Секция тайминга -->
+    <!-- Разделитель перед опросом -->
+    <hr class="section-divider">
+
+    <!-- Секция тайминга (в белой карточке) -->
     <section class="timing">
-        <div class="info-block">
+        <div class="card card--white">
             <h2 class="section-title">Тайминг</h2>
 
             <p class="timing-item">
@@ -160,15 +183,10 @@
                 <span class="time-title">Банкет</span>
             </p>
         </div>
-
-        <div class="heart-img" aria-hidden="true">
-            <svg class="heart-icon" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" role="img">
-                <path fill="currentColor" stroke-width="0.2" stroke-linejoin="round"
-                      d="M 52.2716,27.8072C 48.9356,24.164 42.0671,25.7204 38.0992,31.3618C 33.0737,25.3024 27.0713,24.164 23.7257,27.8072C 14.4142,37.9485 34.3451,52.5246 37.9599,54.1634L 38.0438,54.2109L 38.0438,54.1634C 41.6554,52.5246 61.5832,37.9485 52.2716,27.8072 Z "/>
-            </svg>
-        </div>
-
     </section>
+
+    <!-- Разделитель перед опросом -->
+    <hr class="section-divider">
 
     <!-- Пожелания -->
     <section class="requests">
@@ -249,9 +267,12 @@
         </div>
     </section>
 
+    <!-- Разделитель перед опросом -->
+    <hr class="section-divider">
+
     <!-- Опрос -->
     <section class="Questions">
-        <div id="question-block" class="info-block">
+        <div id="question-block" class="card card--white">
             <h2 class="section-title">Вы придете?</h2>
             <p>
                 Мы будем очень рады видеть вас на нашем торжестве! <br>
@@ -261,14 +282,6 @@
             <!-- Яндекс Форма (iframe добавит script3.js) -->
             <div class="yandex-form-embed" id="ya-form-container"></div>
         </div>
-
-        <div class="heart-img" aria-hidden="true">
-            <svg class="heart-icon" viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" role="img">
-                <path fill="currentColor" stroke-width="0.2" stroke-linejoin="round"
-                      d="M 52.2716,27.8072C 48.9356,24.164 42.0671,25.7204 38.0992,31.3618C 33.0737,25.3024 27.0713,24.164 23.7257,27.8072C 14.4142,37.9485 34.3451,52.5246 37.9599,54.1634L 38.0438,54.2109L 38.0438,54.1634C 41.6554,52.5246 61.5832,37.9485 52.2716,27.8072 Z "/>
-            </svg>
-        </div>
-
     </section>
 
 </div>
