@@ -30,6 +30,7 @@
         container.innerHTML = "";
 
         const iframe = document.createElement("iframe");
+        iframe.style.height = "auto";
         iframe.src = FORM_IFRAME_SRC;
         iframe.name = FORM_NAME;
         iframe.setAttribute("frameborder", "0");

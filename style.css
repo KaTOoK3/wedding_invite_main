@@ -1,6 +1,3 @@
-/* ============================================
-   ПЕРЕМЕННЫЕ
-============================================ */
 :root {
     --font-heading: 'Great Vibes', cursive;
     --font-body: 'Montserrat', sans-serif;
@@ -9,9 +6,6 @@
     --bg-beige: #FFFBFA;
 }
 
-/* ============================================
-   BODY
-============================================ */
 body {
     margin: 0;
     padding: 0;
@@ -22,9 +16,6 @@ body {
     color: #2b2b2b;
 }
 
-/* ============================================
-   ОСНОВНОЙ КОНТЕЙНЕР
-============================================ */
 .wedding-invitation {
     width: 100%;
     max-width: 480px;
@@ -33,6 +24,7 @@ body {
     position: relative;
     z-index: 1;
     background: var(--bg-beige);
+    overflow: hidden;
 }
 
 /* Контент секций поверх декора */
@@ -41,19 +33,12 @@ body {
     z-index: 2;
 }
 
-
-/* ============================================
-   ОБЩИЕ СЕКЦИИ
-============================================ */
 section {
     padding: 40px 20px;
     text-align: center;
     margin: 0;
 }
 
-/* ============================================
-   ТИПОГРАФИЯ
-============================================ */
 h1, h2, h3 {
     font-family: var(--font-heading);
     font-size: 48px;
@@ -67,9 +52,7 @@ p {
     margin: 0 auto 16px;
 }
 
-/* ============================================
-   БЕЛАЯ КАРТОЧКА (универсальная)
-============================================ */
+/* Универсальная белая карточка */
 .card--white,
 .location-card--white {
     background: #ffffff;
@@ -88,60 +71,72 @@ p {
     z-index: 3;
 }
 
-/* ============================================
-   HEADER
-============================================ */
-.header-section{
-    padding: 0;
-}
+.header-section { padding: 0; }
 
-/* Бежевый верх */
 .header-top{
     background: var(--bg-beige);
     color: #000000;
     padding: 40px 20px 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Бордовый блок только под фото + текст + второе сердце */
 .header-burgundy{
     background: var(--bg-burgundy);
     color: #ffffff;
-    padding: 18px 20px 28px; /* чуть сверху и чуть снизу оставили */
+    padding: 18px 20px 28px;
 }
 
+/* 6) адаптивное уменьшение вместо переноса */
 .couple-names {
-    font-size: 50px;
-    letter-spacing: 2px;
+    font-size: clamp(22px, 7.2vw, 50px);
+    letter-spacing: clamp(0px, 0.7vw, 1px);
+    white-space: nowrap;
+    margin-bottom: 0;
+    line-height: 1.05; /* убираем лишнюю высоту строки */
 }
 
-.wedding-title {
-    font-family: "Rubik Bubbles", system-ui;
-    font-size: 30px;
-    margin-top: 0px;
+/* 6) заголовки секций тоже адаптивные */
+.section-title{
+    font-size: clamp(34px, 7vw, 48px);
 }
 
-.wedding-date {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-/* Сердце как inline SVG */
+/* 5) меньше отступ между именем и верхним сердцем */
 .heart-img {
     display: flex;
     justify-content: center;
     margin: 18px 0;
 }
 
+/* ещё меньше отступ у сердца сразу после имени */
+.header-top .heart-img{
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.header-burgundy .heart-img {
+    margin: 10px 0;
+}
+
 .heart-icon {
     width: 10%;
     height: auto;
     display: block;
-    color: currentColor; /* наследует цвет блока */
+    color: currentColor;
 }
 
-/* ============================================
-   ФОТО-КОЛЛАЖ
-============================================ */
+.wedding-title {
+    font-family: "Rubik Bubbles", system-ui;
+    font-size: clamp(22px, 6vw, 30px);
+    margin-top: 0px;
+}
+
+.wedding-date {
+    font-size: clamp(14px, 4vw, 18px);
+    margin-bottom: 10px;
+}
+
 .photos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -161,9 +156,6 @@ p {
     border-radius: 10px;
 }
 
-/* ============================================
-   СЕКЦИИ С БЕЖЕВЫМ ФОНОМ
-============================================ */
 .countdown,
 .calendar-section,
 .location,
@@ -173,9 +165,7 @@ p {
     background: transparent;
 }
 
-/* ============================================
-   ТАЙМЕР
-============================================ */
+/* Таймер уже хорошо сделан (не переносится) */
 #timer {
     margin-top: 10px;
     white-space: nowrap;
@@ -185,9 +175,7 @@ p {
     color: #000;
 }
 
-/* ============================================
-   КАЛЕНДАРЬ
-============================================ */
+/* Календарь */
 .calendar {
     margin: 20px auto 0;
     border-collapse: collapse;
@@ -211,40 +199,24 @@ p {
     z-index: 1;
 }
 
-/*.calendar .wedding-day::before {
-    content: '';
-    position: absolute;
-    inset: 8px;
-    border: 2px dashed #ff6b6b;
-    border-radius: 50%;
-    animation: pulse 2s infinite;
-}*/
-
 /* SVG-сердце как рамка */
 .calendar .wedding-day::after {
     content: "";
     position: absolute;
-    inset: -20px; /* сердце чуть больше цифры */
+    inset: -20px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     pointer-events: none;
-
-    /* SVG через data-uri */
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M179.981 276.772C164.375 267.266 161.18 262.061 147.634 248.36C66.1022 165.898 137.157 112.457 172.866 125.376C179.595 127.81 187.269 135.311 195.888 147.877C198.083 137.546 204.354 129.251 214.702 122.992C286.701 79.4431 320.679 175.189 251.306 237.353C234.603 252.325 207.881 277.281 196.844 287.597' fill='none' stroke='%234E170B' stroke-width='16' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
     animation: pulse 2s infinite;
-
 }
 
-/* ============================================
-   ЛОКАЦИЯ — карточки
-============================================ */
 .location-cards{
     display: grid;
     gap: 16px;
 }
 
-/* Фото-карточка локации */
 .location-photo-card{
     background: var(--bg-burgundy);
     border-radius: 18px;
@@ -262,30 +234,11 @@ p {
     object-fit: cover;
 }
 
-/* Вырез как в пожеланиях — под цвет секции (бежевый) */
-.location-photo-card--with-notch {
-    position: relative;
-}
-
-/*.location-photo-card--with-notch::before {
-    content: "";
-    position: absolute;
-    top: -30px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--bg-beige);
-    z-index: 2;
-}*/
-
-/* отступ перед картой */
 .location-card--white{
     margin-bottom: 24px;
 }
 
-/* --- ИКОНКИ КАРТ (SVG) --- */
+/* Кнопки карт */
 .map-links {
     display: flex;
     justify-content: center;
@@ -312,20 +265,28 @@ p {
     display: block;
 }
 
-/* ============================================
-   ТАЙМИНГ (теперь в карточке, текст черный)
-============================================ */
-.time,
-.time-title{
-    color: #000;
+/* 6) Тайминг: не переносить, а уменьшать */
+.timing-item{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+    flex-wrap: nowrap;
 }
 
-/* ============================================
-   Пожелания — карточки теперь белые, текст черный
-============================================ */
-.requests {
-    color: #2b2b2b;
+.time {
+    color: #000;
+    white-space: nowrap;
 }
+
+.time-title{
+    color: #000;
+    white-space: nowrap;
+    font-size: clamp(12px, 3.4vw, 18px);
+}
+
+/* Пожелания */
+.requests { color: #2b2b2b; }
 
 .requests-grid {
     display: grid;
@@ -334,9 +295,7 @@ p {
 }
 
 @media (min-width: 560px) {
-    .requests-grid {
-        grid-template-columns: repeat(1, 1fr);
-    }
+    .requests-grid { grid-template-columns: repeat(1, 1fr); }
 }
 
 .request-card {
@@ -363,7 +322,7 @@ p {
 
 .request-title {
     margin: 0 0 10px;
-    font-family:  var(--font-body);
+    font-family: var(--font-body);
     font-size: 25px;
     font-weight: 600;
     color: var(--bg-burgundy);
@@ -374,34 +333,70 @@ p {
     color: #2b2b2b;
 }
 
-.contact-link {
+/* 1) Кнопки контактов как кнопки карт */
+.contact-buttons{
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+}
+
+.contact-btn{
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: var(--bg-burgundy);
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 16px;
+    text-decoration: none;
 }
 
-/* Иконки Telegram в пожеланиях — черные */
-.contact-icon {
-    width: 44px;
-    height: 44px;
-    color: #000000;
+.contact-btn__icon{
+    width: 32px;
+    height: 32px;
+    color: #ffffff; /* теперь как у карт */
     display: block;
 }
 
-/* ============================================
-   Разделитель перед опросом
-============================================ */
-.section-divider{
-    border: none;
-    height: 0px;
-    background: rgba(0,0,0,0.15);
-    margin: 10px 20px 0;
+/* 3) Дресс-код: вернуть и сделать “как кнопки карт” */
+.colors{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 22px 0 18px;   /* было меньше — добавили воздуха */
 }
 
-/* ============================================
-   ЯНДЕКС ФОРМА (встраивание)
-============================================ */
+.colors span{
+    width: 34px;
+    height: 26px;
+    border-radius: 10px;
+    border: 1px solid rgba(78, 23, 11, 0.18);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+/* 2) Разделитель — вернуть и сделать мягкие края */
+.section-divider{
+    border: none;
+    height: 3px;                 /* было 1px — теперь заметнее */
+    margin: 20px 20px;
+    background: linear-gradient(
+            to right,
+            transparent,
+            rgba(78, 23, 11, 0.34),
+            transparent
+    );
+    filter: blur(0.9px);         /* сильнее размытие краёв */
+    opacity: 0.95;
+}
+
+
+
+
+
+/* 4) Яндекс форма — не задаём огромный min-height */
 .yandex-form-embed {
     width: 100%;
     max-width: 650px;
@@ -412,12 +407,11 @@ p {
     width: 100%;
     border: 0;
     display: block;
-    min-height: 900px;
+    height: 100%;
+    min-height: 0; /* ключевая правка */
 }
 
-/* ============================================
-   ПК ВЕРСИЯ
-============================================ */
+/* ПК */
 @media (min-width: 768px) {
     body {
         display: flex;
@@ -431,49 +425,35 @@ p {
     }
 }
 
-/* ============================================
-   АНИМАЦИИ
-============================================ */
+/* Анимации */
 @keyframes pulse {
     0% { transform: scale(1); }
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
 
-/* ============================================
-   ЦВЕТА ДРЕСС-КОДА
-============================================ */
+/* Цвета дресс-кода */
 .c1 { background: #b6a8a2; }
 .c2 { background: #471914; }
 .c3 { background: #0f1e1d; }
 .c4 { background: #3f2920; }
 .c5 { background: #070f05; }
-
 .c6 { background: #a1937e; }
 .c7 { background: #594836; }
 .c8 { background: #4d1519; }
 .c9 { background: #301413; }
 .c10 { background: #170704; }
-
 .c11 { background: #795d4c; }
 .c12 { background: #6f6a61; }
 .c13 { background: #4d0a18; }
 .c14 { background: #341515; }
 .c15 { background: #aca494; }
 
-
-/* ============================================
-   ДЕКОР ВНУТРИ ЦЕНТРАЛЬНОГО КОНТЕНТА
-============================================ */
-.wedding-invitation {
-    position: relative;
-    overflow: hidden;
-}
-
+/* Декор внутри центрального контента */
 .decor-layer {
     position: absolute;
     inset: 0;
-    z-index: 1;          /* декор над фоном, но ниже карточек */
+    z-index: 1;
     pointer-events: none;
 }
 
