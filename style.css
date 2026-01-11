@@ -30,7 +30,17 @@ body {
     max-width: 480px;
     margin: 0 auto;
     box-sizing: border-box;
+    position: relative;
+    z-index: 1;
+    background: var(--bg-beige);
 }
+
+/* Контент секций поверх декора */
+.wedding-invitation > section {
+    position: relative;
+    z-index: 2;
+}
+
 
 /* ============================================
    ОБЩИЕ СЕКЦИИ
@@ -69,6 +79,15 @@ p {
     color: #2b2b2b;
 }
 
+/* Все карточки всегда поверх декоративных линий */
+.card--white,
+.location-card--white,
+.request-card,
+.location-photo-card {
+    position: relative;
+    z-index: 3;
+}
+
 /* ============================================
    HEADER
 ============================================ */
@@ -91,13 +110,13 @@ p {
 }
 
 .couple-names {
-    font-size: 32px;
+    font-size: 50px;
     letter-spacing: 2px;
 }
 
 .wedding-title {
-    font-family: "Rampart One", sans-serif;
-    font-size: 20px;
+    font-family: "Rubik Bubbles", system-ui;
+    font-size: 30px;
     margin-top: 0px;
 }
 
@@ -151,7 +170,7 @@ p {
 .timing,
 .requests,
 .Questions {
-    background: var(--bg-beige);
+    background: transparent;
 }
 
 /* ============================================
@@ -183,15 +202,38 @@ p {
 
 .calendar .wedding-day {
     position: relative;
+    width: 40px;
+    height: 40px;
+    padding: 0 !important;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 600;
+    z-index: 1;
 }
 
-.calendar .wedding-day::before {
+/*.calendar .wedding-day::before {
     content: '';
     position: absolute;
     inset: 8px;
     border: 2px dashed #ff6b6b;
     border-radius: 50%;
     animation: pulse 2s infinite;
+}*/
+
+/* SVG-сердце как рамка */
+.calendar .wedding-day::after {
+    content: "";
+    position: absolute;
+    inset: -20px; /* сердце чуть больше цифры */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+
+    /* SVG через data-uri */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M179.981 276.772C164.375 267.266 161.18 262.061 147.634 248.36C66.1022 165.898 137.157 112.457 172.866 125.376C179.595 127.81 187.269 135.311 195.888 147.877C198.083 137.546 204.354 129.251 214.702 122.992C286.701 79.4431 320.679 175.189 251.306 237.353C234.603 252.325 207.881 277.281 196.844 287.597' fill='none' stroke='%234E170B' stroke-width='16' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    animation: pulse 2s infinite;
+
 }
 
 /* ============================================
@@ -225,7 +267,7 @@ p {
     position: relative;
 }
 
-.location-photo-card--with-notch::before {
+/*.location-photo-card--with-notch::before {
     content: "";
     position: absolute;
     top: -30px;
@@ -236,7 +278,7 @@ p {
     border-radius: 50%;
     background: var(--bg-beige);
     z-index: 2;
-}
+}*/
 
 /* отступ перед картой */
 .location-card--white{
@@ -418,3 +460,25 @@ p {
 .c13 { background: #4d0a18; }
 .c14 { background: #341515; }
 .c15 { background: #aca494; }
+
+
+/* ============================================
+   ДЕКОР ВНУТРИ ЦЕНТРАЛЬНОГО КОНТЕНТА
+============================================ */
+.wedding-invitation {
+    position: relative;
+    overflow: hidden;
+}
+
+.decor-layer {
+    position: absolute;
+    inset: 0;
+    z-index: 1;          /* декор над фоном, но ниже карточек */
+    pointer-events: none;
+}
+
+.decor-layer svg {
+    position: absolute;
+    stroke: #4E170B;
+    opacity: 0.10;
+}
