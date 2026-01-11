@@ -262,3 +262,73 @@ p {
 .c13 { background: #4d0a18; }
 .c14 { background: #341515; }
 .c15 { background: #aca494; }
+
+/* =========================
+   Несколько просьб — карточки (только форма)
+========================= */
+
+.requests {
+    background: var(--bg-beige); /* фон секции вокруг карточек */
+    color: #2b2b2b;
+}
+
+/* сетка карточек */
+.requests-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+/* на чуть более широких — 2 в ряд */
+@media (min-width: 560px) {
+    .requests-grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.request-card {
+    position: relative;
+    background: var(--bg-burgundy);
+    color: #fff;
+
+    border-radius: 18px;
+    padding: 22px 18px 18px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+/* “вырез” сверху по центру */
+.request-card::before {
+    content: "";
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+
+    /* цвет выреза = фон секции вокруг карточки */
+    background: var(--bg-beige);
+}
+
+/* базовая типографика внутри карточки (можешь потом менять) */
+.request-title {
+    margin: 0 0 10px;
+    font-family: var(--font-heading);
+    font-size: 18px;
+}
+
+.request-text {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.45;
+    opacity: 0.95;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    fill: #ffffff;
+}
