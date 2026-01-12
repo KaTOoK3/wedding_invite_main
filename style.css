@@ -121,7 +121,7 @@ p {
 /* запуск только по классу */
 .handwrite.animate .handwrite-ink{
     animation: handwriteDraw 2.6s linear forwards;
-    animation-delay: 1.5s;
+    animation-delay: 1.1s;
 }
 
 @keyframes handwriteDraw{
@@ -194,6 +194,8 @@ p {
     display: block;
     object-fit: cover;
     border-radius: 10px;
+    transform: translateZ(0);
+    image-rendering: auto;
 }
 
 .countdown,
