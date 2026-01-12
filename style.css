@@ -88,22 +88,60 @@ p {
     padding: 18px 20px 28px;
 }
 
-/* 6) адаптивное уменьшение вместо переноса */
-.couple-names {
-    font-size: clamp(40px, 7.2vw, 50px);
-    font-weight: 400;
-    letter-spacing: clamp(0px, 0.7vw, 1px);
-    white-space: nowrap;
+/* контейнер с именами — центрирование SVG */
+.couple-names{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 0;
-    line-height: 1.05; /* убираем лишнюю высоту строки */
+    line-height: 1;
+    max-width: 120%;
 }
 
-/* 6) заголовки секций тоже адаптивные */
+/* SVG всегда влезает в секцию и уменьшается на маленьких экранах */
+.handwrite{
+    width: min(92%, 440px);
+    height: auto;
+    display: block;
+    max-width: 100%;
+    color: var(--bg-burgundy); /* “чернила” через currentColor */
+}
+
+.handwrite-ink { stroke-width: 95; }
+
+
+/* ===== Рукописная анимация: dashoffset ===== */
+.handwrite .handwrite-ink{
+    /* стартовые значения выставляем JS-ом по точной длине */
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    will-change: stroke-dashoffset;
+}
+
+/* запуск только по классу */
+.handwrite.animate .handwrite-ink{
+    animation: handwriteDraw 2.6s linear forwards;
+}
+
+@keyframes handwriteDraw{
+    to { stroke-dashoffset: 0; }
+}
+
+/* если у человека отключены анимации — показываем сразу */
+@media (prefers-reduced-motion: reduce){
+    .handwrite .handwrite-ink{
+        stroke-dasharray: 0 !important;
+        stroke-dashoffset: 0 !important;
+        animation: none !important;
+    }
+}
+
+/* заголовки секций адаптивные */
 .section-title{
     font-size: clamp(32px, 7vw, 50px);
 }
 
-/* 5) меньше отступ между именем и верхним сердцем */
+/* меньше отступ между именем и верхним сердцем */
 .heart-img {
     display: flex;
     justify-content: center;
@@ -166,7 +204,7 @@ p {
     background: transparent;
 }
 
-/* Таймер уже хорошо сделан (не переносится) */
+/* Таймер: не переносится */
 #timer {
     margin-top: 10px;
     white-space: nowrap;
@@ -266,7 +304,7 @@ p {
     display: block;
 }
 
-/* 6) Тайминг: не переносить, а уменьшать */
+/* Тайминг: не переносить, а уменьшать */
 .timing-item{
     display: flex;
     justify-content: center;
@@ -334,7 +372,14 @@ p {
     color: #2b2b2b;
 }
 
-/* 1) Кнопки контактов как кнопки карт */
+.hint{
+    display: block;
+    font-style: italic;
+    opacity: 0.7;
+    margin-top: 0px;
+}
+
+/* Кнопки контактов как кнопки карт */
 .contact-buttons{
     display: flex;
     justify-content: center;
@@ -355,33 +400,30 @@ p {
 .contact-btn__icon{
     width: 32px;
     height: 32px;
-    color: #ffffff; /* теперь как у карт */
+    color: #ffffff;
     display: block;
 }
 
-/* 3) Дресс-код: вернуть и сделать “как кнопки карт” */
-.colors{
-    display: flex;
+.dress-dots{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap: clamp(8px, 2.2vw, 13px);
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 22px 0 18px;   /* было меньше — добавили воздуха */
 }
 
-.colors span{
-    width: 34px;
-    height: 26px;
-    border-radius: 10px;
-    border: 1px solid rgba(78, 23, 11, 0.18);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.06);
-    display: inline-block;
-    box-sizing: border-box;
+.dot{
+    aspect-ratio: 1 / 1;
+    width: clamp(35px, 5.2vw, 55px);
+    border-radius: 50%;
+    flex: 0 0 auto;
+    margin-bottom: 18px;
 }
 
-/* 2) Разделитель — вернуть и сделать мягкие края */
+/* Разделитель — мягкие края */
 .section-divider{
     border: none;
-    height: 3px;                 /* было 1px — теперь заметнее */
+    height: 3px;
     margin: 20px 20px;
     background: linear-gradient(
             to right,
@@ -389,15 +431,11 @@ p {
             rgba(78, 23, 11, 0.34),
             transparent
     );
-    filter: blur(0.9px);         /* сильнее размытие краёв */
+    filter: blur(0.9px);
     opacity: 0.95;
 }
 
-
-
-
-
-/* 4) Яндекс форма — не задаём огромный min-height */
+/* Яндекс форма */
 .yandex-form-embed {
     width: 100%;
     max-width: 650px;
@@ -409,7 +447,7 @@ p {
     border: 0;
     display: block;
     height: 100%;
-    min-height: 0; /* ключевая правка */
+    min-height: 0;
 }
 
 /* ПК */
@@ -434,21 +472,11 @@ p {
 }
 
 /* Цвета дресс-кода */
-.c1 { background: #b6a8a2; }
-.c2 { background: #471914; }
-.c3 { background: #0f1e1d; }
-.c4 { background: #3f2920; }
-.c5 { background: #070f05; }
-.c6 { background: #a1937e; }
-.c7 { background: #594836; }
-.c8 { background: #4d1519; }
-.c9 { background: #301413; }
-.c10 { background: #170704; }
-.c11 { background: #795d4c; }
-.c12 { background: #6f6a61; }
-.c13 { background: #4d0a18; }
-.c14 { background: #341515; }
-.c15 { background: #aca494; }
+.c1 { background: #330b02; }
+.c2 { background: #000000; }
+.c3 { background: #02202b; }
+.c4 { background: #5a5a17; }
+.c5 { background: #9a877a; }
 
 /* Декор внутри центрального контента */
 .decor-layer {
