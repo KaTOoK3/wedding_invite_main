@@ -121,6 +121,7 @@ p {
 /* запуск только по классу */
 .handwrite.animate .handwrite-ink{
     animation: handwriteDraw 2.6s linear forwards;
+    animation-delay: 1.5s;
 }
 
 @keyframes handwriteDraw{

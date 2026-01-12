@@ -295,12 +295,12 @@
 
 <!-- Запуск анимации рукописного SVG -->
 <script>
-    window.addEventListener('load', () => {
+    document.addEventListener('DOMContentLoaded', () => {
         const svg = document.querySelector('.handwrite');
         const ink = document.getElementById('handwriteInk');
         if (!svg || !ink) return;
 
-        // если у пользователя reduced motion — просто показываем сразу
+        // если у пользователя reduced motion — показываем сразу, без задержки
         if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             svg.classList.add('animate');
             ink.style.strokeDasharray = '0';
@@ -311,21 +311,18 @@
         // Точная длина пути “пера”
         const len = ink.getTotalLength();
 
-        // Гарантируем стабильный старт
+        // Стартовое состояние (скрыто)
         ink.style.strokeDasharray = String(len);
         ink.style.strokeDashoffset = String(len);
 
-        // Форсим reflow перед стартом, чтобы не было “рывка”
+        // небольшая стабилизация
         ink.getBoundingClientRect();
 
-        // Стартуем через пару кадров после полной загрузки
-        requestAnimationFrame(() => {
-            requestAnimationFrame(() => {
-                svg.classList.add('animate');
-            });
-        });
+        // Класс добавляем сразу — задержку делает CSS (animation-delay: 5s)
+        svg.classList.add('animate');
     });
 </script>
+
 
 </body>
 </html>
