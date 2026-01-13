@@ -1,6 +1,4 @@
-// ============================================
-// ЯНДЕКС ФОРМА — ВСТРАИВАНИЕ В САЙТ
-// ============================================
+
 
 (function () {
     const FORM_IFRAME_SRC = "https://forms.yandex.ru/u/696370c790fa7b948e40d55e?iframe=1";
@@ -9,7 +7,6 @@
 
     function loadScriptOnce(src) {
         return new Promise((resolve, reject) => {
-            // если уже загружали — не грузим повторно
             const existing = document.querySelector(`script[src="${src}"]`);
             if (existing) return resolve();
 
@@ -26,7 +23,6 @@
         const container = document.getElementById("ya-form-container");
         if (!container) return;
 
-        // очищаем на всякий случай
         container.innerHTML = "";
 
         const iframe = document.createElement("iframe");
@@ -43,7 +39,6 @@
         try {
             await loadScriptOnce(EMBED_SCRIPT_SRC);
         } catch (e) {
-            // даже если embed.js не загрузится, iframe всё равно покажется
             console.warn(e);
         }
         mountYandexForm();
