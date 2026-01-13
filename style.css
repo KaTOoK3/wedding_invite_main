@@ -139,7 +139,7 @@ p {
 
 /* заголовки секций адаптивные */
 .section-title{
-    font-size: clamp(32px, 7vw, 50px);
+    font-size: clamp(38px, 7vw, 50px);
 }
 
 /* меньше отступ между именем и верхним сердцем */
@@ -625,5 +625,3 @@ p {
         transition: none !important;
     }
 }
-
-
