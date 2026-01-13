@@ -4,6 +4,10 @@
 
     --bg-burgundy: #4E170B;
     --bg-beige: #FFFBFA;
+
+    --t-time: 24px;
+    --t-title: 24px;
+    --t-sub: 13px;
 }
 
 body {
@@ -50,6 +54,20 @@ h1, h2, h3 {
 p {
     max-width: 650px;
     margin: 0 auto 16px;
+}
+
+.photo-by {
+    display: flex;
+    font-size: 12px;
+    opacity: 0.8px;
+}
+
+.photo-by:link {
+    color: var(--bg-burgundy)
+}
+
+.photo-by:visited {
+    color: var(--bg-burgundy)
 }
 
 /* Универсальная белая карточка */
@@ -319,9 +337,16 @@ p {
 /* Тайминг: не переносить, а уменьшать */
 /* ===== Тайминг ===== */
 
+.timing{
+    --timing-time-size: clamp(22px, 6vw, 25px);
+    --timing-title-size: clamp(20px, 5vw, 27px);
+    --timing-sub-size: clamp(12px, 3.5vw, 14px);
+}
+
 .timing-item {
     display: flex;
-    margin: 32px 0; /* увеличенное расстояние между таймингами */
+    margin: 15px 0; /* увеличенное расстояние между таймингами */
+
 }
 
 .timing-item.left {
@@ -340,7 +365,7 @@ p {
 
 /* Время — крупнее */
 .time {
-    font-size: clamp(22px, 6vw, 25px);
+    font-size: var(--timing-time-size);
     font-weight: 100;
     line-height: 1;
     margin-bottom: 6px;
@@ -349,16 +374,21 @@ p {
 
 /* Название тайминга */
 .timing .card--white .time-title {
-    font-size: clamp(20px, 5vw, 27px);
+    font-size: var(--timing-title-size);
     font-family: "Rubik Bubbles", system-ui;
     color: var(--bg-burgundy);
     font-weight: 100;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
+}
+
+/* Тайминг: убираем левый padding у белой карточки, чтобы плашка касалась края */
+.timing .card--white{
+    padding-left: 0;
 }
 
 /* Подпись под названием */
 .time-subtitle {
-    font-size: clamp(12px, 3.5vw, 14px);
+    font-size: var(--timing-sub-size);
     opacity: 0.65;
     font-style: italic;
 }
@@ -374,6 +404,119 @@ p {
     white-space: nowrap;
     font-size: clamp(12px, 3.4vw, 18px);
 }
+
+/* чтобы SVG реально касался левого края карточки тайминга */
+.timing .card--white { padding-left: 0; }
+
+/* сама плашка — только ширина, всё остальное считается из viewBox */
+.timing-item--svg .timing-pill{
+    --pill-w: clamp(320px, 82vw, 350px);
+
+    position: relative;
+    width: var(--pill-w);
+    aspect-ratio: 135 / 102;
+    margin-left: -16px;
+}
+
+.timing-item--svg .timing-pill__svg{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    clip-path: inset(0 0 0 16px); /* срезаем 6px слева */
+}
+
+/* Текст поверх SVG — и он использует те же размеры, что и остальные тайминги */
+.timing-item--svg .timing-pill__content{
+    position: absolute;
+    /* “посадка” один раз — дальше будет масштабироваться вместе с плашкой,
+       но КЕГЛЬ будет как у правых таймингов, т.к. берётся из var(--timing-*) */
+    top: 23%;
+    left: 7%;
+    right: 22%;
+    bottom: 18%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0;
+
+    overflow: hidden; /* чтобы ничего не вылезало */
+}
+
+/* Синхронизация размеров 1:1 */
+.timing-item--svg .timing-pill__content .time{
+    font-size: var(--timing-time-size);
+    white-space: normal !important;
+    margin-bottom: 0.18em;
+}
+
+.timing-item--svg .timing-pill__content .time-title{
+    font-size: var(--timing-title-size);
+    white-space: normal !important;
+    margin-bottom: 0.10em;
+}
+
+.timing-item--svg .timing-pill__content .time-subtitle{
+    font-size: var(--timing-sub-size);
+    white-space: normal !important;
+
+    margin-top: 0.10em;
+
+    /* защита от “вылезания” */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+/* Стили текста внутри foreignObject (он масштабируется вместе с SVG) */
+/*.pill-fo{
+    font-family: var(--font-body);
+    color: #000;
+    line-height: 1.05;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+
+    margin: 0;
+    padding: 0;
+}*/
+
+/* Текст внутри SVG-плашки — по кеглю как обычный тайминг */
+/*
+.pill-time{
+    font-size: font-size: var(--t-time);
+    font-weight: 100;
+    opacity: 0.85;
+    line-height: 1;
+}
+
+.pill-title{
+    font-family: "Rubik Bubbles", system-ui;
+    font-size: font-size: var(--t-title);
+    font-weight: 100;
+    color: var(--bg-burgundy);
+    line-height: 1.05;
+    margin-top: 6px;
+}
+
+.pill-sub{
+    font-size: font-size: var(--t-sub);
+    opacity: 0.65;
+    font-style: italic;
+    line-height: 1.35;
+    margin-top: 6px;
+
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+*/
 
 /* Пожелания */
 .requests { color: #2b2b2b; }
