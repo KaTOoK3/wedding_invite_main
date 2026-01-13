@@ -289,6 +289,15 @@ p {
     margin-top: 14px;
 }
 
+.map-links-caption {
+    margin-top: 6px;
+    font-family: 'Montserrat', sans-serif;
+    /*font-style: italic;*/
+    font-size: 0.7em; /* примерно в 1.5 раза меньше основного текста */
+    color: var(--bg-burgundy);
+    opacity: 0.85;
+}
+
 .map-link {
     width: 54px;
     height: 54px;
@@ -340,9 +349,10 @@ p {
 
 /* Название тайминга */
 .timing .card--white .time-title {
-    font-size: clamp(23px, 5vw, 30px);
-    font-family: 'Great Vibes', cursive;
-    font-weight: 300;
+    font-size: clamp(20px, 5vw, 27px);
+    font-family: "Rubik Bubbles", system-ui;
+    color: var(--bg-burgundy);
+    font-weight: 100;
     margin-bottom: 4px;
 }
 
@@ -615,3 +625,5 @@ p {
         transition: none !important;
     }
 }
+
+
