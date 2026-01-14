@@ -556,7 +556,7 @@ p {
 
 .dot{
     aspect-ratio: 1 / 1;
-    width: clamp(35px, 5.2vw, 55px);
+    width: clamp(42px, 5.2vw, 55px);
     border-radius: 50%;
     flex: 0 0 auto;
     margin-bottom: 18px;
@@ -613,11 +613,17 @@ p {
 }
 
 
-.c1 { background: #330b02; }
+.c1 { background: #531604; }
 .c2 { background: #000000; }
 .c3 { background: #043a50; }
 .c4 { background: #5a5a17; }
 .c5 { background: #705e4f; }
+
+.c6 { background: #88584f; }
+.c7 { background: #575252; }
+.c8 { background: #758388; }
+.c9 { background: #acac86; }
+.c10 { background: #b1a8a1; }
 
 
 .decor-layer {
